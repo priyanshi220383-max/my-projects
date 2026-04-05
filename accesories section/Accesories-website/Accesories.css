@@ -1,4 +1,9 @@
- URVORA — Accessories Page Stylesheet
+/* ============================================================
+   URVORA — Accessories Page Stylesheet
+   Luxury warm-gold retail aesthetic
+   ============================================================ */
+
+/* ---------- CSS VARIABLES (CHANGED: centralised palette) ---------- */
 :root {
     --cream:        #f5ede0;
     --sand:         #e8d5b7;
@@ -21,7 +26,7 @@
     --transition:   0.3s ease;
 }
 
-/* ---------- RESET  ---------- */
+/* ---------- RESET (CHANGED: kept but added smooth scroll) ---------- */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -40,7 +45,7 @@ body {
     line-height: 1.7;
 }
 
-/* ---------- MAIN NAVBAR  ---------- */
+/* ---------- MAIN NAVBAR (CHANGED: refined spacing & gold underline on hover) ---------- */
 .main-navbar {
     display: flex;
     justify-content: space-between;
@@ -54,7 +59,7 @@ body {
     backdrop-filter: blur(6px);
 }
 
-/* -----------------logo--------------------- */
+/* CHANGED: logo is now an anchor — styled as text */
 .logo {
     font-family: var(--font-display);
     font-size: 26px;
@@ -81,7 +86,7 @@ body {
     color: var(--gold-dark);
 }
 
-/* -----------cart-badge---------- */
+/* ADDED: cart badge */
 .cart-badge {
     display: inline-flex;
     align-items: center;
@@ -96,7 +101,7 @@ body {
     vertical-align: middle;
 }
 
-/* ---------- accesories NAVBAR  ---------- */
+/* ---------- SECONDARY NAVBAR (CHANGED: refined) ---------- */
 #navbar {
     display: flex;
     justify-content: space-between;
@@ -104,7 +109,7 @@ body {
     padding: 14px 8%;
     background-color: var(--brown-deep);
     position: sticky;
-    top: 62px;      
+    top: 62px;      /* CHANGED: sits below main navbar */
     z-index: 999;
 }
 
@@ -128,12 +133,12 @@ body {
 }
 
 #nav-links li a:hover,
-#nav-links li a.active { /*  .active class for JS scroll-spy */
+#nav-links li a.active { /* ADDED: .active class for JS scroll-spy */
     color: var(--gold-light);
     border-bottom-color: var(--gold-light);
 }
 
-/*  icon button style */
+/* CHANGED: icon button style */
 .icon-btn {
     background: none;
     border: none;
@@ -147,7 +152,7 @@ body {
     transform: scale(1.1);
 }
 
-/* ---------- HERO SECTION  ---------- */
+/* ---------- HERO SECTION (CHANGED: id renamed, class-based styling) ---------- */
 #watches-hero {
     padding: 80px 8%;
     text-align: center;
@@ -203,7 +208,7 @@ body {
     gap: 24px;
 }
 
-/*--------------card section------------*/
+/* CHANGED: card redesigned — cleaner, more refined */
 .card {
     background: var(--card-bg);
     text-align: center;
@@ -234,14 +239,14 @@ body {
     letter-spacing: 1px;
 }
 
-/* ---------- BRAND INFO SECTIONS  ---------- */
+/* ---------- BRAND INFO SECTIONS (CHANGED: unified "brand-info-section") ---------- */
 .brand-info-section {
     padding: var(--section-pad);
     background-color: var(--sand);
     border-top: 1px solid #c9b28c;
 }
 
-/*  side-by-side layout with flex */
+/* CHANGED: side-by-side layout with flex */
 .brand-layout {
     display: flex;
     gap: 60px;
@@ -274,7 +279,7 @@ body {
     box-shadow: 12px 12px 36px rgba(61, 31, 8, 0.2);
 }
 
-/* ---------- PRODUCT ITEMS SECTIONS  ---------- */
+/* ---------- PRODUCT ITEMS SECTIONS (CHANGED: refined card design) ---------- */
 .items {
     padding: var(--section-pad);
     background-color: var(--cream);
@@ -339,7 +344,7 @@ body {
     color: var(--gold-dark);
 }
 
-/*  card-actions row with spacing */
+/* ADDED: card-actions row with spacing */
 .card-actions {
     display: flex;
     align-items: center;
@@ -348,7 +353,7 @@ body {
     margin-top: auto;
 }
 
-/* ---------- BUTTONS  ---------- */
+/* ---------- BUTTONS (CHANGED: refined CTA + new cart button) ---------- */
 .cta-btn {
     background: var(--brown-deep);
     color: var(--white);
@@ -367,7 +372,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* ----cart button---- */
+/* ADDED: cart icon button */
 .cart-btn {
     background: var(--sand);
     border: 1px solid var(--gold-light);
@@ -383,7 +388,7 @@ body {
     background: var(--gold-light);
 }
 
-/* ---------- FOOTER  ---------- */
+/* ---------- FOOTER (CHANGED: darker tone, cleaner links) ---------- */
 .footer {
     background-color: var(--brown-deep);
     padding: 60px 8%;
@@ -426,6 +431,7 @@ body {
     color: var(--gold-light);
 }
 
+/* CHANGED: rights bar */
 #rights {
     text-align: center;
     padding-top: 28px;
@@ -438,7 +444,7 @@ body {
     color: rgba(232, 213, 183, 0.6);
 }
 
-/* ---------- RESPONSIVE  ---------- */
+/* ---------- RESPONSIVE (CHANGED: tidied breakpoints) ---------- */
 @media (max-width: 900px) {
     .items-grid {
         grid-template-columns: repeat(2, 1fr);
