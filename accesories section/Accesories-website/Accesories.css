@@ -1,0 +1,495 @@
+ URVORA — Accessories Page Stylesheet
+:root {
+    --cream:        #f5ede0;
+    --sand:         #e8d5b7;
+    --gold-light:   #d4a84b;
+    --gold-mid:     #b8892a;
+    --gold-dark:    #8a621a;
+    --brown-deep:   #3d1f08;
+    --brown-mid:    #6b3f1a;
+    --white:        #fefefe;
+    --text-body:    #4a2e0a;
+    --card-bg:      rgba(255, 248, 235, 0.9);
+
+    /* Typography */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Montserrat', 'Gill Sans', sans-serif;
+
+    /* Spacing */
+    --section-pad:  60px 8%;
+    --radius:       4px;
+    --transition:   0.3s ease;
+}
+
+/* ---------- RESET  ---------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* ADDED: smooth anchor scrolling */
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--text-body);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ---------- MAIN NAVBAR  ---------- */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background-color: var(--cream);
+    border-bottom: 1px solid var(--sand);
+    position: sticky;       /* ADDED: stays at top on scroll */
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+}
+
+/* -----------------logo--------------------- */
+.logo {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: var(--brown-deep);
+    text-decoration: none;
+}
+
+.top-nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: var(--gold-mid);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color var(--transition);
+    position: relative;
+}
+
+.top-nav a:hover {
+    color: var(--gold-dark);
+}
+
+/* -----------cart-badge---------- */
+.cart-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gold-mid);
+    color: var(--white);
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+/* ---------- accesories NAVBAR  ---------- */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 8%;
+    background-color: var(--brown-deep);
+    position: sticky;
+    top: 62px;      
+    z-index: 999;
+}
+
+#nav-links {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+}
+
+#nav-links li a {
+    text-decoration: none;
+    color: var(--sand);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+#nav-links li a:hover,
+#nav-links li a.active { /*  .active class for JS scroll-spy */
+    color: var(--gold-light);
+    border-bottom-color: var(--gold-light);
+}
+
+/*  icon button style */
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--sand);
+    transition: transform var(--transition);
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ---------- HERO SECTION  ---------- */
+#watches-hero {
+    padding: 80px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, #d4a84b22 0%, #e8d5b7 60%, #c9a96e44 100%);
+    border-bottom: 1px solid var(--sand);
+}
+
+.section-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-mid);
+    margin-bottom: 18px;
+}
+
+.hero-heading {
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--brown-deep);
+    margin-bottom: 28px;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--brown-mid);
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+/* ---------- BRANDS OVERVIEW GRID (CHANGED: class "brands-section") ---------- */
+.brands-section {
+    padding: var(--section-pad);
+    background-color: var(--sand);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: var(--brown-deep);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/*--------------card section------------*/
+.card {
+    background: var(--card-bg);
+    text-align: center;
+    padding: 0 0 20px;
+    border: 1px solid var(--sand);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(61, 31, 8, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-label {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--brown-deep);
+    margin: 16px 0 12px;
+    letter-spacing: 1px;
+}
+
+/* ---------- BRAND INFO SECTIONS  ---------- */
+.brand-info-section {
+    padding: var(--section-pad);
+    background-color: var(--sand);
+    border-top: 1px solid #c9b28c;
+}
+
+/*  side-by-side layout with flex */
+.brand-layout {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.brand-text {
+    flex: 1 1 380px;
+}
+
+.brand-text p {
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--brown-mid);
+    text-align: justify;
+}
+
+.brand-image {
+    flex: 0 0 420px;
+}
+
+.brand-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: 12px 12px 36px rgba(61, 31, 8, 0.2);
+}
+
+/* ---------- PRODUCT ITEMS SECTIONS  ---------- */
+.items {
+    padding: var(--section-pad);
+    background-color: var(--cream);
+}
+
+.items-grid {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.items-card {
+    background: var(--card-bg);
+    border: 1px solid var(--sand);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.items-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(61, 31, 8, 0.13);
+}
+
+.items-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* CHANGED: text content padded inside card */
+.items-card .product-name,
+.items-card .product-ref,
+.items-card .product-price {
+    padding: 0 16px;
+}
+
+.product-name {
+    margin-top: 14px;
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--brown-deep);
+}
+
+.product-ref {
+    margin-top: 4px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--gold-mid);
+    text-transform: uppercase;
+}
+
+.product-price {
+    margin-top: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--gold-dark);
+}
+
+/*  card-actions row with spacing */
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px 16px;
+    margin-top: auto;
+}
+
+/* ---------- BUTTONS  ---------- */
+.cta-btn {
+    background: var(--brown-deep);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    padding: 8px 18px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.cta-btn:hover {
+    background: var(--gold-dark);
+    transform: translateY(-1px);
+}
+
+/* ----cart button---- */
+.cart-btn {
+    background: var(--sand);
+    border: 1px solid var(--gold-light);
+    border-radius: var(--radius);
+    padding: 6px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background var(--transition);
+    margin-left: auto;
+}
+
+.cart-btn:hover {
+    background: var(--gold-light);
+}
+
+/* ---------- FOOTER  ---------- */
+.footer {
+    background-color: var(--brown-deep);
+    padding: 60px 8%;
+    color: var(--sand);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 36px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.footer-col h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: var(--sand);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color var(--transition);
+}
+
+.footer-col a:hover {
+    color: var(--gold-light);
+}
+
+#rights {
+    text-align: center;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#rights p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(232, 213, 183, 0.6);
+}
+
+/* ---------- RESPONSIVE  ---------- */
+@media (max-width: 900px) {
+    .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brand-layout {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .brand-image {
+        flex: 1 1 100%;
+    }
+
+    .hero-heading {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 600px) {
+    #navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 5%;
+        top: 56px;
+    }
+
+    #nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-heading {
+        font-size: 28px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-navbar {
+        padding: 14px 5%;
+    }
+
+    .top-nav a {
+        margin-left: 14px;
+        font-size: 11px;
+    }
+}

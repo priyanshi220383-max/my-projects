@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories — URVORA</title>
+    <!-- CHANGED: linked to renamed Accessories.css (fixed typo) -->
+    <link rel="stylesheet" href="Accesories.css">
+    <!-- ADDED: Google Fonts for refined luxury typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ========== MAIN NAVBAR ========== -->
+    <!-- CHANGED: added id="main-navbar" for JS scroll/sticky behaviour -->
+    <header class="main-navbar" id="main-navbar">
+        <!-- CHANGED: wrapped logo in anchor for home link; added id for JS branding -->
+        <a href="#" class="logo" id="site-logo">URVORA</a>
+        <nav class="top-nav">
+            <!-- CHANGED: added meaningful href stubs + id attributes for JS cart/wishlist logic -->
+            <a href="#" id="nav-shop">Shop</a>
+            <a href="#" id="nav-search">Search</a>
+            <a href="#" id="nav-wishlist">Wishlist</a>
+            <a href="#" id="nav-cart">Cart <span id="cart-count" class="cart-badge">0</span></a>
+        </nav>
+    </header>
+
+    <!-- ========== SECONDARY NAVBAR ========== -->
+    <!-- CHANGED: added role="navigation" for accessibility; id kept for JS scroll-spy -->
+    <nav id="navbar" role="navigation" aria-label="Category navigation">
+        <ul id="nav-links">
+            <li><a href="#watches" id="nav-watches">Watches</a></li>
+            <li><a href="#Jewellery" id="nav-jewellery">Jewellery</a></li>
+            <li><a href="#Titan" id="nav-titan">Titan</a></li>
+            <li><a href="#Timex" id="nav-timex">Timex</a></li>
+            <li><a href="#about" id="nav-about">About Us</a></li>
+        </ul>
+        <div id="nav-icons">
+            <!-- CHANGED: added id + button role for JS profile dropdown -->
+            <button id="profile-btn" class="icon-btn" aria-label="Profile">👤</button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO / WATCHES INTRO SECTION ========== -->
+    <!-- CHANGED: id renamed to "watches-hero" (descriptive) for JS targeting -->
+    <section id="watches-hero" class="hero-section">
+        <p class="section-label">Watches</p>
+        <h1 class="hero-heading">The entire world of watches</h1>
+        <p class="hero-description">
+            Whether you're looking for automatic watches, manual-winding watches or wristwatches
+            with a quartz movement — at URVORA, the entire world of watches will be at your feet,
+            or rather at your hands. Have a look at our offerings online, but be sure to stop by
+            our shop to see them in person. Our highly trained service personnel will take the time
+            to discuss your needs.
+        </p>
+    </section>
+
+    <!-- ========== WATCH BRANDS OVERVIEW GRID ========== -->
+    <!-- CHANGED: id="watches" (lowercase, matches nav href); added section tag properly -->
+    <section id="watches" class="brands-section">
+        <h2 class="section-title">WATCHES</h2>
+        <div class="grid">
+
+            <div class="card" data-brand="titan">
+                <!-- CHANGED: added alt text for accessibility -->
+                <img src="https://i.pinimg.com/1200x/58/c8/c2/58c8c2e7c525f7f798968b34adaa223d.jpg" alt="Titan Watch">
+                <p class="card-label">Titan</p>
+                <a href="#Titan"><button class="cta-btn">Learn More →</button></a>
+            </div>
+
+            <div class="card" data-brand="timex">
+                <img src="https://i.pinimg.com/736x/ad/6e/66/ad6e6609be1e195f6704baa9f677f5e4.jpg" alt="Timex Watch">
+                <p class="card-label">Timex</p>
+                <a href="#Timex"><button class="cta-btn">Learn More →</button></a>
+            </div>
+
+            <div class="card" data-brand="ranges">
+                <img src="https://static.helioswatchstore.com/media/catalog/product/1/8/18062617bm01_1_1.jpg" alt="Product Ranges">
+                <p class="card-label">Our Product Ranges</p>
+                <!-- CHANGED: href="#watches" so it actually anchors somewhere useful -->
+                <a href="#watches"><button class="cta-btn">Learn More →</button></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== TITAN BRAND INFO ========== -->
+    <!-- CHANGED: kept id="Titan" for nav href match; added consistent class "brand-info-section" for JS -->
+    <section id="Titan" class="brand-info-section section">
+        <h2 class="section-title">Titan</h2>
+        <!-- CHANGED: wrapped info+image in a flex row container for side-by-side layout -->
+        <div class="brand-layout">
+            <div class="brand-text" id="info-titan">
+                <p>Titan Company Limited is a leading Indian watch and lifestyle company founded in 1984
+                    as a joint venture between the Tata Group and the Tamil Nadu Industrial Development Corporation (TIDCO).
+                    Headquartered in Bengaluru, it transformed the Indian watch industry with stylish, affordable,
+                    and high-quality timepieces, introducing modern quartz technology and making watches a fashion
+                    accessory for Indian consumers. Titan operates popular brands such as Fastrack and Sonata,
+                    and is renowned for its jewellery brand Tanishq. Recognised for reliability, elegant designs,
+                    and innovation in both analog and smartwatches, Titan remains one of India's most respected brands.
+                </p>
+            </div>
+            <div class="brand-image" id="img-titan">
+                <img src="https://thefederal.com/file/2022/12/titan-store-696x520.jpg" alt="Titan boutique">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TITAN PRODUCTS GRID ========== -->
+    <!-- CHANGED: added data-category="titan" for JS filter/cart logic -->
+    <section class="items" id="titan-items" data-category="titan">
+        <h2 class="section-title">TITAN</h2>
+        <div class="items-grid">
+
+            <!-- CHANGED: added data-id, data-price, data-name on every card for JS add-to-cart -->
+            <div class="items-card" data-id="TITAN-01" data-price="20295" data-name="Titan Edge Slim">
+                <img src="https://i.pinimg.com/1200x/be/e4/1a/bee41a3e4792c07b1365ff02b004c831.jpg" alt="Titan Edge Slim">
+                <p class="product-name">Titan Edge Slim</p>
+                <p class="product-price">₹20,295</p>
+                <div class="card-actions">
+                    <a href="titan-1.html"><button class="cta-btn">Learn More →</button></a>
+                    <!-- ADDED: add-to-cart button with data attributes for JS -->
+                    <button class="cart-btn" data-id="TITAN-01" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TITAN-02" data-price="2000" data-name="Titan Regalia Dual-tone">
+                <img src="https://i.pinimg.com/736x/e6/69/95/e669950589c8026397ce444d42d14d4b.jpg" alt="Titan Regalia">
+                <p class="product-name">Titan Regalia / Karishma (Dual-tone)</p>
+                <p class="product-price">₹2,000</p>
+                <div class="card-actions">
+                    <a href="titan-2.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TITAN-02" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TITAN-03" data-price="7250" data-name="Titan Workwear Metropolitan">
+                <img src="https://i.pinimg.com/1200x/9b/08/85/9b088538847684b1f7fc28c50b71931d.jpg" alt="Titan Workwear">
+                <p class="product-name">Titan Workwear / Metropolitan</p>
+                <p class="product-price">₹7,250</p>
+                <div class="card-actions">
+                    <a href="titan-3.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TITAN-03" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TITAN-04" data-price="5276" data-name="Titan Raga Delight">
+                <img src="https://i.pinimg.com/736x/30/65/7c/30657c2d53d67617277db5f973ccf6cf.jpg" alt="Titan Raga Delight">
+                <p class="product-name">Titan Raga Delight Quartz Analog</p>
+                <p class="product-price">₹5,276</p>
+                <div class="card-actions">
+                    <a href="titan-4.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TITAN-04" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TIMEX-05" data-price="6240" data-name="Titan Analog Purple Dial">
+                <img src="https://i.pinimg.com/736x/a8/09/c0/a809c0cc2182a721ebf7a26dee1aa976.jpg" alt="Titan Analog Purple">
+                <p class="product-name">Titan Analog Purple Dial</p>
+                <p class="product-price">₹6,240</p>
+                <div class="card-actions">
+                    <a href="titan-5.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TIMEX-05" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TITAN-06" data-price="2542" data-name="Titan Karishma Dual-Tone Day-Date">
+                <img src="https://i.pinimg.com/736x/a6/7f/eb/a67febaf86f9dfc5ad6eb1e04e2cda7e.jpg" alt="Titan Karishma">
+                <p class="product-name">Titan Karishma (Dual-Tone Day-Date)</p>
+                <p class="product-price">₹2,542</p>
+                <div class="card-actions">
+                    <a href="titan-6.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TITAN-06" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== TIMEX BRAND INFO ========== -->
+    <section id="Timex" class="brand-info-section section">
+        <h2 class="section-title">TIMEX</h2>
+        <div class="brand-layout">
+            <div class="brand-text" id="info-timex">
+                <p>Timex Group is a well-known American watch company founded in 1854 in Waterbury, Connecticut.
+                    Famous for producing durable, affordable, and reliable watches for everyday use, Timex gained
+                    worldwide recognition with its slogan "Takes a licking and keeps on ticking." The company
+                    introduced innovations such as the Indiglo night-light feature and easy-to-read dial designs.
+                    Worn by soldiers, athletes, and everyday people around the world, Timex is considered one of
+                    the most trusted and popular watch brands globally.
+                </p>
+            </div>
+            <div class="brand-image" id="img-timex">
+                <img src="https://tradebrains-wp.s3.ap-south-1.amazonaws.com/wp-content/uploads/2026/02/Timex.jpg" alt="Timex watches">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TIMEX PRODUCTS GRID ========== -->
+    <section class="items" id="timex-items" data-category="timex">
+        <h2 class="section-title">Timex</h2>
+        <div class="items-grid">
+
+            <div class="items-card" data-id="TIMEX-01" data-price="7795" data-name="Timex Chronograph">
+                <img src="https://i.pinimg.com/736x/f6/17/bc/f617bc29060c972c56b38db4a279718f.jpg" alt="Timex Chronograph">
+                <p class="product-name">Timex Chronograph</p>
+                <p class="product-price">₹7,795</p>
+                <div class="card-actions">
+                    <a href="timex-1.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TIMEX-01" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TMX-45BLK" data-price="3795" data-name="Round 45mm Black Dial">
+                <img src="https://i.pinimg.com/1200x/cf/b1/62/cfb16258741ce6b09afeca2aeb7f7499.jpg" alt="Timex 45mm Black">
+                <p class="product-name">Round 45mm Black Dial</p>
+                <p class="product-price">₹3,795</p>
+                <div class="card-actions">
+                    <a href="timex-2.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TMX-45BLK" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TMX-43RND" data-price="5995" data-name="Timex Round 43mm">
+                <img src="https://i.pinimg.com/1200x/35/e7/31/35e731d6d41341f9485e33091cfbabdd.jpg" alt="Timex 43mm">
+                <p class="product-name">Timex Round 43mm</p>
+                <p class="product-price">₹5,995</p>
+                <div class="card-actions">
+                    <a href="timex-3.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TMX-43RND" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TMX-SVIEW" data-price="2899" data-name="Timex Southview Multifunction">
+                <img src="https://i.pinimg.com/736x/27/0b/8c/270b8ce3ad2f875c1ab4a12d9a1f81c3.jpg" alt="Timex Southview">
+                <p class="product-name">Timex Southview Multifunction</p>
+                <p class="product-price">₹2,899</p>
+                <div class="card-actions">
+                    <a href="timex-4.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TMX-SVIEW" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TMX-MOON" data-price="3146" data-name="Timex E-Class Moon Phase">
+                <img src="https://i.pinimg.com/736x/db/9a/39/db9a39ea55ef1d121046f6f2191e92e9.jpg" alt="Timex Moon Phase">
+                <p class="product-name">Timex E-Class Women's Moon Phase</p>
+                <p class="product-price">₹3,146</p>
+                <div class="card-actions">
+                    <a href="timex-5.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TMX-MOON" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="TMX-35W" data-price="3477" data-name="Timex 35mm Analog Women">
+                <img src="https://i.pinimg.com/1200x/0b/45/cf/0b45cf5d281727aade6c9b16d9e1b672.jpg" alt="Timex Women 35mm">
+                <p class="product-name">Round 35mm Analog Women's Watch</p>
+                <p class="product-price">₹3,477</p>
+                <div class="card-actions">
+                    <a href="timex-6.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="TMX-35W" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== JEWELLERY BRAND INFO ========== -->
+    <section id="Jewellery" class="brand-info-section section">
+        <h2 class="section-title">Jewellery</h2>
+        <div class="brand-layout">
+            <div class="brand-text" id="info-jewel">
+                <p>Are you searching for a piece of jewellery that tells your story, or do you own
+                    a precious gemstone waiting to be transformed? URVORA is where craftsmanship meets
+                    imagination. Our skilled artisans carefully design and handcraft exquisite jewellery
+                    every day, blending tradition with modern elegance. Whether you choose from our curated
+                    collections or dream of a custom-made creation, we are here to turn your vision into a
+                    timeless treasure made just for you.</p>
+            </div>
+            <div class="brand-image" id="img-jewel">
+                <img src="https://i.pinimg.com/736x/a0/b8/fe/a0b8fe093f1640b96518910c389d5969.jpg" alt="Jewellery collection">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== JEWELLERY PRODUCTS GRID ========== -->
+    <section class="items" id="jewellery-items" data-category="jewellery">
+        <h2 class="section-title">Jewellery</h2>
+        <div class="items-grid">
+
+            <div class="items-card" data-id="JWL-RK01" data-price="6546477" data-name="Radha-Krishna Temple Necklace">
+                <img src="https://i.pinimg.com/1200x/af/27/d1/af27d17c49590c488911d0c85b1dded9.jpg" alt="Radha Krishna Necklace">
+                <p class="product-name">Radha-Krishna Temple Design Gold Necklace</p>
+                <p class="product-price">₹65,46,477</p>
+                <div class="card-actions">
+                    <a href="jewel-1.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="JWL-RK01" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="JWL-PCK01" data-price="2500000" data-name="Peacock Gold Neckpiece">
+                <img src="https://i.pinimg.com/736x/5b/62/3a/5b623ad6fb96e10e9943998bc30c2558.jpg" alt="Peacock Neckpiece">
+                <p class="product-name">Peacock Design Gold Neckpiece</p>
+                <p class="product-price">₹25,00,000</p>
+                <div class="card-actions">
+                    <a href="jewel-2.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="JWL-PCK01" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="JWL-SBE01" data-price="13477" data-name="Silver Blue Stone Earrings">
+                <img src="https://i.pinimg.com/1200x/ad/12/53/ad125358079c8d0a79caa594c3f4fdc3.jpg" alt="Silver Blue Earrings">
+                <p class="product-name">Silver Blue Stone Earrings</p>
+                <p class="product-price">₹13,477</p>
+                <div class="card-actions">
+                    <a href="jewel-3.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="JWL-SBE01" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="JWL-BNG01" data-price="8000" data-name="Silver Zirconia Leaf Bangle">
+                <img src="https://i.pinimg.com/1200x/f9/25/cc/f925cc5a159f65078f328941c896891b.jpg" alt="Silver Bangle">
+                <p class="product-name">Pure Silver Zirconia Leaf Bangle</p>
+                <p class="product-price">₹8,000</p>
+                <div class="card-actions">
+                    <a href="jewel-4.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="JWL-BNG01" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="JWL-PCB01" data-price="3500" data-name="Silver Peacock Feather Bracelet">
+                <img src="https://i.pinimg.com/1200x/46/af/99/46af9919585bd0e42b595de3c8526e25.jpg" alt="Peacock Bracelet">
+                <p class="product-name">Pure Silver Peacock Feather Bracelet</p>
+                <p class="product-price">₹3,500</p>
+                <div class="card-actions">
+                    <a href="jewel-5.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="JWL-PCB01" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+            <div class="items-card" data-id="JWL-RNG01" data-price="35477" data-name="14KT Twisted Gold Ring">
+                <img src="https://i.pinimg.com/1200x/a8/85/10/a885104b1eddcd46c622c23e0421e209.jpg" alt="Gold Ring">
+                <p class="product-name">14KT Twisted Gold Ring</p>
+                <p class="product-price">₹35,477</p>
+                <div class="card-actions">
+                    <a href="jewel-6.html"><button class="cta-btn">Learn More →</button></a>
+                    <button class="cart-btn" data-id="JWL-RNG01" aria-label="Add to cart">🛒</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="about">
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h3>Urvora</h3>
+                <a href="#">Who We Are</a>
+                <a href="#">Terms &amp; Conditions</a>
+                <a href="#">We Respect Your Privacy</a>
+                <a href="#">Fees &amp; Payments</a>
+                <a href="#">Returns &amp; Refunds Policy</a>
+                <a href="#">Promotions Terms &amp; Conditions</a>
+                <a href="#">Blog</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Help</h3>
+                <a href="#">Track Your Order</a>
+                <a href="#">Frequently Asked Questions</a>
+                <a href="#">Returns</a>
+                <a href="#">Cancellations</a>
+                <a href="#">Payments</a>
+                <a href="#">Customer Care</a>
+                <a href="#">How Do I Redeem My Coupon</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Shop By</h3>
+                <a href="#">All</a>
+                <a href="#">Accessories</a><!-- CHANGED: fixed typo "Accesories" -->
+                <a href="#Titan">Titan</a>
+                <a href="#Timex">Timex</a>
+                <a href="#Jewellery">Jewellery</a><!-- CHANGED: closed tag was missing -->
+                <a href="#watches">Watches</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram — Urvora</a>
+                <a href="#">YouTube — Urvora</a><!-- CHANGED: removed duplicate Instagram entry -->
+                <a href="#">Twitter / X</a>
+                <a href="#">Pinterest</a>
+            </div>
+
+        </div>
+        <!-- CHANGED: fixed typo "arre" -->
+        <div id="rights">
+            <p>© All Rights Reserved — Urvora</p>
+        </div>
+    </footer>
+
+    <!-- ADDED: JS file link at bottom for easy integration -->
+    <!-- <script src="Accessories.js"></script> -->
+
+</body>
+</html>
